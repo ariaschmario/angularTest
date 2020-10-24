@@ -10,6 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import 'hammerjs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from './services/dish.service';
@@ -23,6 +27,11 @@ import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
+
+// Reactive forms
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,6 +56,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     AppRoutingModule,
     MatDialogModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    FormsModule,
+    // reactive forms
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     LoginComponent
