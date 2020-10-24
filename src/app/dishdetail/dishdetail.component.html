@@ -1,4 +1,4 @@
-<div class="container"
+<div *ngIf="dish" class="container"
     fxLayout="row wrap"
     fxLayout.sm="column"
     fxLayout.xs="column"
@@ -8,7 +8,7 @@
 
         <div fxFlex="100">
           <div>
-            <h3>{{dish.name | uppercase}}</h3>
+            <h3 *ngIf="dish">{{dish.name | uppercase}}</h3>
             <hr>
           </div>
         </div>
@@ -25,9 +25,12 @@
           </mat-card-actions>
         </mat-card>
 </div>
+<div [hidden]="dish">
+  <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+</div>
 
   <div fxFlex="40">
-            <div fxFlex *ngIf="dish">
+    <div fxFlex *ngIf="dish">
             <mat-card>
               <mat-card-header>
                 <mat-card-title>
@@ -45,4 +48,7 @@
               </mat-card-content>
             </mat-card>
       </div>
+    <div [hidden]="dish">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
   </div>
