@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseurl';
+import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
 
 // Reactive forms
 import { MatSelectModule } from '@angular/material/select';
@@ -80,7 +81,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     DishService,
     PromotionService,
     LeaderService,
-    {provide: 'baseURL', useValue: baseURL}
+    {provide: 'baseURL', useValue: baseURL},
+    ProcessHTTPMsgService
   ],
   bootstrap: [AppComponent]
 })

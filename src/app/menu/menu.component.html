@@ -6,6 +6,7 @@
         <h3>Menu</h3>
         <hr>
      </div>
+
      <div fxflex *ngIf="dishes">
       <mat-grid-list cols="2" rowHeight="300px">
         <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
@@ -16,9 +17,12 @@
         </mat-grid-tile>
       </mat-grid-list>
      </div>
-    <div [hidden]="dishes">
+    <div [hidden]="dishes || errMess">
       <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
     </div>
-
+    <div fxFlex *ngIf="errMess">
+      <h2>Error</h2>
+      <h4>{{errMess}}</h4>
+    </div>
 </div>
 
